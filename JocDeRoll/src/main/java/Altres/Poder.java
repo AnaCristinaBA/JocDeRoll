@@ -4,7 +4,7 @@ public class Poder {
     String nom;
     int bonusAtac;
     int bonusDefensa;
-    Poder(String nom, int bonusAtac, int bonusDefensa){
+    public Poder(String nom, int bonusAtac, int bonusDefensa){
         this.nom=nom;
         this.bonusAtac=bonusAtac;
         this.bonusDefensa=bonusDefensa;
@@ -12,7 +12,7 @@ public class Poder {
 
     @Override
     public String toString(){
-        return nom+" ( BA: " +bonusAtac+ ", BD:" +bonusDefensa;
+        return nom+" ( BA: " +bonusAtac+ ", BD:" +bonusDefensa + ")";
     }
 
 

@@ -16,7 +16,7 @@ public class Equip {
     public void posa(Jugador o) {
         if (!jugadors.contains(o)) {
             jugadors.add(o);
-            Jugador.equip = o;
+            o.setEquip(this);
             System.out.println("El "+o.getNom()+" ha sigut afegix al equip "+getNom());
         }
         else {System.out.println("Ja ni ha un jugador amb el mateix nom que el jugador "+o.getNom());}
@@ -25,7 +25,7 @@ public class Equip {
 
     public void lleva(Jugador o){
         jugadors.remove(o);
-        Jugador.equip = null;
+        o.setEquip(null);
         mostra();
     }
 
@@ -34,7 +34,7 @@ public class Equip {
         System.out.println("Equip: " +nom);
         for (Jugador j : jugadors) {
             System.out.println(j);
-        }
+        }    
     }
 
 
