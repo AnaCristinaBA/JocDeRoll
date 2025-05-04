@@ -1,5 +1,8 @@
 package Altres;
 
+import java.util.Objects;
+
+
 public class Poder {
     String nom;
     int bonusAtac;
@@ -8,6 +11,14 @@ public class Poder {
         this.nom=nom;
         this.bonusAtac=bonusAtac;
         this.bonusDefensa=bonusDefensa;
+    }
+
+ @Override
+    public boolean equals(Object o) {
+        if (o == null)
+            return false;
+            Poder poder = (Poder) o;
+        return Objects.equals(nom, poder.nom);
     }
 
     @Override

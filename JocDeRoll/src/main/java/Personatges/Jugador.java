@@ -14,8 +14,9 @@ public class Jugador {
     int vides;
     private Equip equip;
     List<Poder> poders = new ArrayList<>();
+    static public int videsInicials = 200;
 
-    Jugador(String nom, int puntsAtac, int puntsDefensa, int vides) {
+    public Jugador(String nom, int puntsAtac, int puntsDefensa, int vides) {
         this.nom = nom;
         this.puntsAtac = puntsAtac;
         this.puntsDefensa = puntsDefensa;
@@ -40,8 +41,7 @@ public class Jugador {
             for (Poder p : poders) {
                 p.toString();
             }
-            ;
-
+            
         } else {
             resultat = nom + " [" + equip.getNom() + "] ( " + this.getClass().getSimpleName() + "/ PA: " + puntsAtac
                     + "/ PD: "
@@ -78,8 +78,7 @@ public class Jugador {
 
         }
 
-        System.out
-                .println("   " + nom + " és colpejat amb " + puntsAtacTotals + " i es defén amb " + puntsDefensaTotals +
+        System.out.println("   " + nom + " és colpejat amb " + puntsAtacTotals + " i es defén amb " + puntsDefensaTotals +
                         ". Vides: " + vides + "-" + puntsRestants + "=" + vidaFinal);
         vides = vidaFinal;
     }

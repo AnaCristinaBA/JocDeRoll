@@ -40,21 +40,24 @@ public class Alien extends Jugador {
     public void ataca(Jugador jugador) {
         System.out.println("\n \033[0;1m               " + nom + " VS " + jugador.nom);
         System.out.println("ABANS DE L'ATAC:\n   Atacant: " + toString() + " \n   Atacant: " + jugador.toString());
+        System.out.println("\nATAC:");
+        // Ataque
         int puntsAtacTotals = puntsAtac;
         for (Poder p : poders) {
             puntsAtacTotals += p.getBonusAtac();
-            jugador.esColpejatAmb(puntsAtacTotals);
-            esColpejatAmb(jugador.getPuntsAtac());
-        }
-        // Propio de alien
-        if (vides > 20) {
-            puntsAtacTotals += 3;
+            // Propio de alien
+            if (vides > 20) {
+                puntsAtacTotals += 3;
 
+            }
         }
-
-        System.out.println("\nATAC:");
         jugador.esColpejatAmb(puntsAtacTotals);
-        esColpejatAmb(jugador.getPuntsAtac());
+
+        puntsAtacTotals = jugador.puntsAtac;
+        for (Poder p : jugador.poders) {
+            puntsAtacTotals += p.getBonusAtac();
+        }
+        esColpejatAmb(puntsAtacTotals);
         System.out.println("\nDESPRÉS DE L'ATAC: \n   Atacant: " + toString() + " \n   Atacant: " + jugador.toString());
     }
 }

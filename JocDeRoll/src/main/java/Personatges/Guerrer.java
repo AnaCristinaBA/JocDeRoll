@@ -8,11 +8,9 @@ public class Guerrer extends Huma{
         super(nom, puntsAtac, puntsDefensa, vides);
         System.out.println("Sóc el constructor de Guerrer però estic creant un " +this.getClass().getSimpleName());
     }
-    protected void esColpejatAmb(int puntsAtac){
-        int puntsAtacTotals = puntsAtac;
+    protected void esColpejatAmb(int puntsAtacTotals){
         int puntsDefensaTotals = puntsDefensa;
         for (Poder p : poders) {
-            puntsAtacTotals += p.getBonusAtac();
             puntsDefensaTotals += p.getBonusDefensa();
 
         }
